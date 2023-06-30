@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Evento Dual 2023 - Registro</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <center><h1>Evento Dual 2023</h1></center>
-    <body bgcolor="#f0f0f0">
-        <br><center><form action="Registro.html" method="post">
-            <input type="submit" name="boton_menu1" value="Registraté Aquí">
-        </form></center></br>
-    </body>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewpor" content="witdh=device-witdh, initial-scale=1.0">
+    <title>Evento Tese 2023</title>
+    <script src="https://kit.fontawesome.com/81ce64fc29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+   
+</head>
+<body>
+    <header>
+  <div class="container__header">
+
+    <div class="logo">
+        <img src="media/logo.png" alt="">
+    </div>
+
+    <div class="menu">
+       <nav><ul>
+        <li><a href="index.html">Inicio</a><</li>
+        <li><a href="login.html">login Administrativos</a></li>
+        
+       </ul></nav> 
+    </div>
+    <i class="fa-solid fa-bars" id="icon_menu"></i>
+    <div class="header__register">
+      <a href="Registro.html">
+        <input type="button"  class="btn__header-register" value="Registro Al Evento"></a>
+    </div>
+  </div>
+
+    </header>
+   <main>
+    <div class="cover">
+        <div class="texto__informacion-cover">
+            <h1>Bienvenidos Al evento del programa dual 2023.</h1>
+            <p>Les pedimos que seleccionen la opcion que necesitan 
+            </p>
+            <div class="buttons__cover">
+              <a href="login.html">
+                <input type="button" class="btn__register-cover"value="Login Administrativo"></a>
+                <a href="registro.html">
+                <input type="button" class="btn__login-cover"value="Registro Al Evento"></a>
+            </div>
+
+        </div>
+        <div class="media__cover">
+            <video src="media/reciclar.mov" autoplay playinline loop muted
+            preload="auto"></video>
+        </div>
+    </div>
+    <div class="container__banner">
+
+        <div class="banner">
+          <div class="banner__icon-heart">
+            <img src="media/banner.png" id="icon_heart"alt="">
+          </div>
+          <div class="banner__icon-fire">
+            <img src="media/atras.png" id="icon_fire" alt="">
+          </div>
+          <div class="banner__text">
+            <h2>El reciclaje disminuye gases de invernadero que contribuyen al  
+                cambio climatologico global, conserva los recursos naturales y ayuda a 
+                sostener nuestro medio ambiente.
+            </h2>
+            
+          </div>
+        </div>
+    </div>
+   </main>
+    <script src="js/script.js"> </script>
+</body>
 </html>
