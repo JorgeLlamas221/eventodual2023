@@ -6,23 +6,23 @@ $pwd = '';
 $nombreBD = 'eventoDual_2023';
 $info = $_POST['id_trabajador'];
 
-//$conexionBD_0 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die("ERROR!!!! No Se Pudo Conectar Al Servidor :(");
-
 class PDF extends FPDF
 {
 // Cabecera de página
 function Header()
 {
     // Logo
-    $this->Image('Imagenes/logo.png',10,8,33);
+    $this->Image('Imagenes/Logo_tese.jpg',165,8,33);
+    $this->Image('Imagenes/EdoMex.png',11,8,40);
     // Arial bold 15
-    $this->SetFont('Times','B',15);
+    $this->SetFont('Times','B',25);
     // Movernos a la derecha
     $this->Cell(80);
     // Título
-    $this->Cell(30,10,'ECOJOBA', 0, 0, 'C');
+    $this->Cell(30,10,'Evento Dual 2023', 0, 0, 'C');
     // Salto de línea
     $this->Ln(20);
+    //$this->Image('Imagenes/Logo_TECHNM.png',30,8,33);
 }
 
 // Pie de página
@@ -41,9 +41,6 @@ function Footer()
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetFont('Helvetica','',12);
-$pdf->SetFillColor(15, 165, 31);
-$pdf->SetTextColor(255, 255, 255);
 
 $conector1 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select1 = mysqli_query($conector1, "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo  FROM inscripcion WHERE id_inscripcion = $info");
@@ -79,40 +76,30 @@ $informacion = 'FOLIO: '.$info.'
 $conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
 
-$pdf->cell(190, 10, "Informacion Del Trabajador", 1, 0, 'C', 1);
-$pdf->Ln();
 $pdf->SetTextColor(0, 0, 0);
+$pdf->SetFillColor(42, 228, 149);
+$pdf->SetFont('Arial','',15);
+$pdf->cell(85, 25, "Evento Dual 2023", 1, 0, 'C', 1);
+$pdf->Ln();
 while($res2 = mysqli_fetch_array($select2)){
-    $pdf->SetFillColor(182, 193, 178);
-    $pdf->cell(39, 10, "Folio Inscripcion:", 1, 0, 'I', 1);
-    $pdf->cell(75, 10, $info, 1, 0, 'I');
-    $pdf->Ln();
-    $pdf->Image('Imagenes/foto.jpg',160, 40, 40);
+    $pdf->SetFillColor(42, 228, 149);
+    $pdf->Image('Imagenes/Logo_TECNM.png',11, 30, 20); //(x, y, tamaño)
+    $pdf->Image('Imagenes/Logo_tese.jpg',75, 30, 20);
 
-    $pdf->cell(39, 10, "Tipo De Visita:", 1, 0, 'I', 1);
-    $pdf->cell(75, 10, $res2['tipoVisitante'], 1, 0, 'I');
+    $pdf->SetTextColor(0, 0, 0);
+    $pdf->SetFont('Arial','B',13);
+    $pdf->cell(85, 30, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
+    $pdf->Ln();
+    $pdf->SetFont('Arial','',13);
+    $pdf->cell(85, 30, "Junio 2023", 1, 0, 'R', 1);
+    $pdf->Image('Codigo_QR/QR.png',11, 85, 30);
     $pdf->Ln();
 
-    $pdf->cell(39, 10, "Nombre(s):", 1, 0, 'I', 1);
-    $pdf->cell(75, 10, $res2['nombres'], 1, 0, 'I');
-    $pdf->Ln();
-    
-    $pdf->cell(39, 10, "A.Paterno:", 1, 0, 'I', 1);
-    $pdf->cell(75, 10, $res2['apellidoPaterno'], 1, 0, 'I');
-    $pdf->Ln();
-    
-    $pdf->cell(39, 10, "A.Materno:", 1, 0, 'I', 1);
-    $pdf->cell(75, 10, $res2['apellidoMaterno'], 1, 0, 'I');
-    $pdf->Ln();
-    
-    $pdf->cell(39, 10, "Sexo:", 1, 0, 'I', 1);
-    $pdf->cell(75, 10, $res2['sexo'], 1, 0, 'I');
-
-    $pdf->SetFillColor(15, 165, 31);
+    $pdf->SetFillColor(175, 34, 34);
     $pdf->SetTextColor(255, 255, 255);
-    $pdf->Ln();
-    $pdf->cell(190, 10, "Codigo QR", 1, 0, 'C', 1);
-    $pdf->Image('Codigo_QR/QR.png', 60, 115, 90);
+    $pdf->SetFont('Arial','B',25);
+    
+    $pdf->cell(85, 20, $res2['tipoVisitante'], 1, 0, 'C', 1);
 }
 $pdf->Output();
 ?>
