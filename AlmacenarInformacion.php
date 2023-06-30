@@ -15,7 +15,7 @@ if ($stmt = $conexionBD->prepare($asignarID)) {
     while ($stmt->fetch()) {
         echo "<b><h1>Ingresaste Los Siguientes Datos:</h1></b>";
         echo "<b><br>Su Folio De Inscripcion Asignado Por El Sistema Es:</br></b>".$id_inscripcion;
-        echo "<br><b>Area de Trabajo:</b><br>".$_POST["tipoVisitante"];
+        echo "<br><b>Tipo De Visitante:</b><br>".$_POST["tipoVisitante"];
         echo "<br><b>Nombre:</b><br>".$_POST["nombres"];
         echo "<br><b>Apellido Paterno:</b><br>".$_POST["aPaterno"];
         echo "<br><b>Apellido Materno:</b><br>".$_POST["aMaterno"];
@@ -38,7 +38,7 @@ mysqli_close($conexionBD);
             <b>Para Finalizar Tu Registro, Introduzca El Numero De Folio Que Se Le Fue Asignado Por El Sistema y De Click En El Boton "Finalizar Registro" y Obtendras Tu Pase Al Evento Dual 2023 Por Correo.<br><input type="number" name="id_trabajador" value="" placeholder="Folio"></br></b>         
             <br><input type="submit" name="boton_pdf" value="Finalizar Registro"></br>
          </form>
-         <META HTTP-EQUIV="REFRESH" CONTENT="15;URL=index.html">
+         <META HTTP-EQUIV="REFRESH" CONTENT="30;URL=index.html">
     </body>
     </html>
        
