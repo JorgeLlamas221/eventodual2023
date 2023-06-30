@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <title>Evento Dual 2023 - </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body bgcolor="#f0f0f0">
+        <center><h1>Evento Dual 2023</h1><center>
+        <h2>Introduzca Los Siguientes Datos:</h2>
+        <form action="AlmacenarInformacion.php" method="POST">
+                <b>Tipo De Portador:<b> <br>
+                        <br><select name="tipoVisitante"><br>
+                                <option value="Alumno Dual">Alumno Dual</option>
+                                <option value="Empresa">Empresa</option>
+                                <option value="Egresado Dual">Egresado Dual</option>
+                        </select>        
+                <br><br>
+                <b>Nombre(s):<b> <br><br>
+                <input type="text" name="nombres" value='' placeholder="Ejemplo@Jorge"><br><br>
+                <b>Apellido Paterno:<b> <br><br>
+                <input type="text" name="aPaterno" value='' placeholder="Ejemplo@Manriquez"><br><br>
+                <b>Apellido Materno:<b> <br><br>
+                <input type="text" name="aMaterno" value='' placeholder="Ejemplo@Salas"><br><br>
+                <b>Sexo:<b> <br><br>
+                        <input type="radio" name="sexo" value="hombre">Hombre
+                        <input type="radio" name="sexo" value="mujer">Mujer<br><br>
+                
+                <b>Correo Electronico:<b> <br><br>
+                        <input type="text" name="correoElectronico" value='' placeholder="Ejemplo@xxxxxx.tese.edu.com"><br><br>
+                <br>
+                        <input type="submit" name="boton1" value="Registrarme">
+                <br><br>
+    </form>
+    </select>
+            </select>
+        <br><br>
+    </body>
+</html>
