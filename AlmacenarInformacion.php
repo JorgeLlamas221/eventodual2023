@@ -1,7 +1,7 @@
 <?php
 if(!empty($_POST)){
-    $serverName = "Localhost";
-    $connectionInfo = array("Database"=>"eventoDual_2023");
+    $serverName = "tcp:eventodual2023.database.windows.net,1433";
+    $connectionInfo = array("Database"=>"BDdual2023");
     $conn = sqlsrv_connect($serverName, $connectionInfo);
 
     $tipoVisitante = $_POST["tipoVisitante"];
