@@ -1,6 +1,6 @@
 <?php
 if(!empty($_POST)){
-    $serverName = "tcp:eventodual2023.database.windows.net,1433";
+    $serverName = "eventodual2023.database.windows.net,1433";
     $connectionInfo = array("Database"=>"BDdual2023");
     $conn = sqlsrv_connect($serverName, $connectionInfo);
 

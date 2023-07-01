@@ -1,7 +1,7 @@
 <?php
 require ('fpdf185/fpdf.php');
 $info = $_POST['id_inscripcion'];
-$serverName = "tcp:eventodual2023.database.windows.net,1433";
+$serverName = "eventodual2023.database.windows.net";
 $connectionInfo = array("Database"=>"BDdual2023");
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
