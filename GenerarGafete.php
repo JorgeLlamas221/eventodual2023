@@ -1,9 +1,19 @@
 <?php
-require ('fpdf185/fpdf.php');
-$info = $_POST['id_inscripcion'];
-$serverName = "eventodual2023.database.windows.net";
-$connectionInfo = array("Database"=>"BDdual2023");
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:eventodual2023.database.windows.net,1433; Database = BDdual2023", "CloudSAb94d8c7a", "Tot28184");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "CloudSAb94d8c7a", "pwd" => "Tot28184", "Database" => "BDdual2023", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:eventodual2023.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
+
 
 $consulta = "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo FROM inscripcion WHERE id_inscripcion = $info";
 $sql = sqlsrv_query($conn, $consulta);
