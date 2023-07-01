@@ -1,8 +1,19 @@
 <?php
-if(!empty($_POST)){
-    $serverName = "eventodual2023.database.windows.net,1433";
-    $connectionInfo = array("Database"=>"BDdual2023");
-    $conn = sqlsrv_connect($serverName, $connectionInfo);
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:eventodual2023.database.windows.net,1433; Database = BDdual2023", "CloudSAb94d8c7a", "Tot28184");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "CloudSAb94d8c7a", "pwd" => "Tot28184", "Database" => "BDdual2023", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:eventodual2023.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
 
     $tipoVisitante = $_POST["tipoVisitante"];
     $nombres = $_POST["nombres"];
