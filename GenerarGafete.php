@@ -1,22 +1,10 @@
 <?php
-// PHP Data Objects(PDO) Sample Code:
-try {
-    $conn = new PDO("sqlsrv:server = tcp:eventodual2023.database.windows.net,1433; Database = BDdual2023", "CloudSAb94d8c7a", "Tot28184");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "CloudSAb94d8c7a", "pwd" => "Tot28184", "Database" => "BDdual2023", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:eventodual2023.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-
-
-$consulta = "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo FROM inscripcion WHERE id_inscripcion = $info";
-$sql = sqlsrv_query($conn, $consulta);
+require ('fpdf185/fpdf.php');
+$nombreHost = 'localhost';
+$nombreUsuario = 'root';
+$pwd = '';
+$nombreBD = 'eventoDual_2023';
+$info = $_POST['id_trabajador'];
 
 class PDF extends FPDF
 {
@@ -54,6 +42,9 @@ $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 
+$conector1 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
+$select1 = mysqli_query($conector1, "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo  FROM inscripcion WHERE id_inscripcion = $info");
+
 require 'phpqrcode/qrlib.php';
 $directorio = 'Codigo_QR/';
 
@@ -66,12 +57,12 @@ $tamanio = 10;
 $nivel = 'M';
 $dimension = 3;
 
-while($inscripcion=sqlsrv_fetch_array($sql)){
-    $tipoVisitante = $inscripcion[0];
-    $nombre = $inscripcion[1];
-    $apellidoP = $inscripcion[2];
-    $apellidoM = $inscripcion[3];
-    $sexo = $inscripcion[4];
+while($res1 = mysqli_fetch_array($select1)){
+        $tipoVisitante = $res1["tipoVisitante"];
+        $nombre = $res1["nombres"];
+        $apellidoP = $res1["apellidoPaterno"];
+        $apellidoM = $res1["apellidoMaterno"];
+        $sexo = $res1["sexo"];
 }
 
 $informacion = 'FOLIO: '.$info.'
@@ -82,22 +73,22 @@ $informacion = 'FOLIO: '.$info.'
         VISITANTE: '. $tipoVisitante;
         QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);
 
-$consulta_2 = "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno FROM inscripcion WHERE id_inscripcion = $info";
-$sql_2 = sqlsrv_query($conn, $consulta_2);
+$conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
+$select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
 
 $pdf->SetTextColor(0, 0, 0);
 $pdf->SetFillColor(42, 228, 149);
 $pdf->SetFont('Arial','',15);
 $pdf->cell(85, 25, "Evento Dual 2023", 1, 0, 'C', 1);
 $pdf->Ln();
-while($inscripcion_2 = sqlsrv_fetch_array($sql_2)){
+while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFillColor(42, 228, 149);
     $pdf->Image('Imagenes/Logo_TECNM.png',11, 30, 20); //(x, y, tamaño)
     $pdf->Image('Imagenes/Logo_tese.jpg',75, 30, 20);
 
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','B',13);
-    $pdf->cell(85, 30, $inscripcion_2[1]." ".$inscripcion_2[2]." ".$inscripcion_2[3], 1, 0, 'C');
+    $pdf->cell(85, 30, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
     $pdf->Ln();
     $pdf->SetFont('Arial','',13);
     $pdf->cell(85, 30, "Junio 2023", 1, 0, 'R', 1);
@@ -108,7 +99,7 @@ while($inscripcion_2 = sqlsrv_fetch_array($sql_2)){
     $pdf->SetTextColor(255, 255, 255);
     $pdf->SetFont('Arial','B',25);
     
-    $pdf->cell(85, 20, $inscripcion_2[0], 1, 0, 'C', 1);
+    $pdf->cell(85, 20, $res2['tipoVisitante'], 1, 0, 'C', 1);
 }
 $pdf->Output();
 ?>
