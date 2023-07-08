@@ -2,7 +2,7 @@
 $correoExistente = $_POST['correoElectronico'];
 $nombreExistente = $_POST['nombreCompleto'];
 
-$conexion1 = mysqli_connect('localhost', 'root', '', 'Ecojoba') or die('Error en la conexion servidor');
+$conexion1 = mysqli_connect('eventodual2023-server', 'eventodual2023-server', '', 'eventodual2023-database') or die('Error en la conexion servidor');
 $verificarExistencia1 = "SELECT correoElectronico FROM Usuario WHERE correoElectronico = '$correoExistente'";
 $correoEncontrado = 0;
 if ($verificacion1 = $conexion1->prepare($verificarExistencia1)) {
@@ -12,7 +12,7 @@ if ($verificacion1 = $conexion1->prepare($verificarExistencia1)) {
     $verificacion1->close();
 }
 
-$conexion2 = mysqli_connect('localhost', 'root', '', 'Ecojoba') or die('Error en la conexion servidor');
+$conexion2 = mysqli_connect('eventodual2023-server', 'eventodual2023-server', '', 'eventodual2023-database') or die('Error en la conexion servidor');
 $verificarExistencia2 = "SELECT nombreCompleto FROM Usuario WHERE nombreCompleto = '$nombreExistente'";
 $nombreEncontrado = 0;
 if ($verificacion2 = $conexion2->prepare($verificarExistencia2)) {
@@ -49,7 +49,7 @@ else{
             </script>';
         }
         else{
-            $conexion3 = mysqli_connect('localhost', 'root', '', 'Ecojoba') or die('Error en la conexion servidor');
+            $conexion3 = mysqli_connect('eventodual2023-server', 'eventodual2023-server', '', 'eventodual2023-database') or die('Error en la conexion servidor');
             $registrarUsuario = "INSERT INTO Usuario (id_usuario, nombreUsuario, nombreCompleto, correoElectronico, contrasenia) VALUES(null,'".$_POST["nombreUsuario"]."','".$_POST["nombreCompleto"]."','".$_POST["correoElectronico"]."','".$_POST["contrasenia"]."')";
             $temp = mysqli_query($conexion3, $registrarUsuario) or die("Error Al Momento De Almacenar La informacion En La Base De Datos");
 
