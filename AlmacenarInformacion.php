@@ -1,8 +1,8 @@
 <?php
-$nombreHost = 'eventodual2023-server2.mysql.database.azure.com';
+/*$nombreHost = 'eventodual2023-server2.mysql.database.azure.com';
 $nombreUsuario = 'mfuxpcdkwc';
-$pwd = '';
-$nombreBD = 'C45B8640EFBK5C2A';
+$pwd = 'C45B8640EFBK5C2A';
+$nombreBD = 'eventoDual_2023';
 
 $conexionBD = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die("ERROR!!!! No Se Pudo Conectar Al Servidor :(");
 $guardarRegistro = "INSERT INTO inscripcion (tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo, correoElectronico) VALUES ('".$_POST["tipoVisitante"]."','".$_POST["nombres"]."','".$_POST["aPaterno"]."','".$_POST["aMaterno"]."','".$_POST["sexo"]."','".$_POST["correoElectronico"]."')";
@@ -27,10 +27,11 @@ if ($stmt = $conexionBD->prepare($asignarID)) {
 }
 
 
-mysqli_close($conexionBD); 
+mysqli_close($conexionBD);*/ 
+echo "Prueba 1 - PHP";
 ?>
 
-<html>
+<!--<html>
     <title>Confirmar Registro</title>
     <body bgcolor="#f0f0f0">
         <form action="GenerarGafete.php" method="POST" target="_blank">
@@ -40,5 +41,5 @@ mysqli_close($conexionBD);
          </form>
          <META HTTP-EQUIV="REFRESH" CONTENT="30;URL=index.html">
     </body>
-    </html>
+    </html>-->
        
