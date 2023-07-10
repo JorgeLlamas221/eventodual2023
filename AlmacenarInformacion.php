@@ -1,5 +1,5 @@
 <?php
-/*$nombreHost = 'eventodual2023-server2.mysql.database.azure.com';
+$nombreHost = 'eventodual2023-server2.mysql.database.azure.com';
 $nombreUsuario = 'mfuxpcdkwc';
 $pwd = 'C45B8640EFBK5C2A';
 $nombreBD = 'eventoDual_2023';
@@ -27,11 +27,10 @@ if ($stmt = $conexionBD->prepare($asignarID)) {
 }
 
 
-mysqli_close($conexionBD);*/ 
-echo "Prueba 1 - PHP";
+mysqli_close($conexionBD);
 ?>
 
-<!--<html>
+<html>
     <title>Confirmar Registro</title>
     <body bgcolor="#f0f0f0">
         <form action="GenerarGafete.php" method="POST" target="_blank">
@@ -41,5 +40,5 @@ echo "Prueba 1 - PHP";
          </form>
          <META HTTP-EQUIV="REFRESH" CONTENT="30;URL=index.html">
     </body>
-    </html>-->
+    </html>
        
