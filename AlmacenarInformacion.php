@@ -1,7 +1,7 @@
 <?php
 $nombreHost = 'eventodual2023-server2.mysql.database.azure.com';
 $nombreUsuario = 'mfuxpcdkwc';
-$pwd = 'C45B8640EFBK5C2A';
+$pwd = 'C45B8640EFBK5C2A$';
 $nombreBD = 'eventoDual_2023';
 
 $conexionBD = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die("ERROR!!!! No Se Pudo Conectar Al Servidor :(");
