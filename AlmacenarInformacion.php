@@ -1,8 +1,8 @@
 <?php
-$nombreHost = 'localhost';
-$nombreUsuario = 'root';
+$nombreHost = 'eventodual2023-server2.mysql.database.azure.com';
+$nombreUsuario = 'mfuxpcdkwc';
 $pwd = '';
-$nombreBD = 'eventoDual_2023';
+$nombreBD = 'C45B8640EFBK5C2A';
 
 $conexionBD = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die("ERROR!!!! No Se Pudo Conectar Al Servidor :(");
 $guardarRegistro = "INSERT INTO inscripcion (tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo, correoElectronico) VALUES ('".$_POST["tipoVisitante"]."','".$_POST["nombres"]."','".$_POST["aPaterno"]."','".$_POST["aMaterno"]."','".$_POST["sexo"]."','".$_POST["correoElectronico"]."')";
