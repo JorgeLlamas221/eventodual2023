@@ -1,12 +1,10 @@
 <?php
-$nombreHost = 'AZURE_MYSQL_eventodual2023-server';
-$nombreUsuario = 'AZURE_MYSQL_mfuxpcdkwc';
-$pwd = 'AZURE_MYSQL_C45B8640EFBK5C2A$';
-$nombreBD = 'AZURE_MYSQL_eventodual2023-database';
-$port = 'AZURE_MYSQL_PORT'
+$nombreHost = 'localhost';
+$nombreUsuario = 'root';
+$pwd = '';
+$nombreBD = 'eventoDual_2023';
 
-
-$conexionBD = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD, $port) or die("ERROR!!!! No Se Pudo Conectar Al Servidor :(");
+$conexionBD = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die("ERROR!!!! No Se Pudo Conectar Al Servidor :(");
 $guardarRegistro = "INSERT INTO inscripcion (tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo, correoElectronico) VALUES ('".$_POST["tipoVisitante"]."','".$_POST["nombres"]."','".$_POST["aPaterno"]."','".$_POST["aMaterno"]."','".$_POST["sexo"]."','".$_POST["correoElectronico"]."')";
 $tmp = mysqli_query($conexionBD, $guardarRegistro) or die ("ERROR !!! No Se Pudo Tener Conexion Con La BD :(");
 $asignarID = "SELECT id_inscripcion FROM inscripcion WHERE nombres= '".$_POST["nombres"]."' AND apellidoPaterno= '".$_POST["aPaterno"]."' AND apellidoMaterno= '".$_POST["aMaterno"]."'";
@@ -27,8 +25,6 @@ if ($stmt = $conexionBD->prepare($asignarID)) {
     }
     $stmt->close();
 }
-
-
 
 
 mysqli_close($conexionBD); 

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: #f5f5f5;
+
+
+}
+header{
+    height: 100px;
+}
+.container__header{
+    max-width: 1200px;
+    height: 100%;
+    margin:auto;
+    padding: 40px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.btn__header-register{
+    padding: 14px 50px;
+    border: none;
+    background: black;
+    color: #f5f5f5;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background,color,300mms;
+}
+.btn__header-register:hover{
+background: #69F1A1;
+color: black;
+}
+
+#icon_menu{
+    display: none;
+}
+/*Portada-Cover*/
+main{
+    max-width: 1200px;
+    height: calc(100vh + 800px);
+   padding: 40px;
+   margin: auto;
+}
+.cover{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px; 
+}
+.texto__informacion-cover{
+    width: 50%;
+}
+.texto__informacion-cover h1{
+   font-size: 50px;
+}
+.texto__informacion-cover p{
+    font-size: 18px;
+    margin-top: 40px;
+}
+.buttons__cover{
+    display: flex;
+    margin-top: 40px;
+}
+.btn__register-cover,.btn__login-cover{
+padding: 14px 40px;
+border: none;
+color: black;
+font-weight: 500;
+font-size: 16px;
+cursor: pointer;
+margin-left: 10px;
+transition: background 300ms;
+}
+.btn__register-cover:hover, .btn__login-cover:hover{
+    background: #69F1A1;
+    color: black;
+    }
+.media__cover{
+    width: 50%;
+}
+.media__cover video{
+    width: 100%;
+    margin-top: -40px;
+}

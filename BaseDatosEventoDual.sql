@@ -14,3 +14,9 @@ asistencia VARCHAR (10),
 fecha DATE,
 hora Time
 );
+
+CREATE TABLE usuario(
+id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+nombreUsuario VARCHAR(40),
+contrasenia VARCHAR(40)
+);

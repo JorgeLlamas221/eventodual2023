@@ -1,10 +1,9 @@
 <?php
 require ('fpdf185/fpdf.php');
-$nombreHost = 'AZURE_MYSQL_eventodual2023-server';
-$nombreUsuario = 'AZURE_MYSQL_mfuxpcdkwc';
-$pwd = 'AZURE_MYSQL_C45B8640EFBK5C2A$';
-$nombreBD = 'AZURE_MYSQL_eventodual2023-database';
-$port = 'AZURE_MYSQL_PORT'
+$nombreHost = 'eventodual2023-server2.mysql.database.azure.com';
+$nombreUsuario = 'mfuxpcdkwc';
+$pwd = 'C45B8640EFBK5C2A$';
+$nombreBD = 'eventoDual_2023';
 $info = $_POST['id_trabajador'];
 
 class PDF extends FPDF
@@ -43,7 +42,7 @@ $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 
-$conector1 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD, $port) or die ("Error De Conexion!!!" );
+$conector1 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select1 = mysqli_query($conector1, "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo  FROM inscripcion WHERE id_inscripcion = $info");
 
 require 'phpqrcode/qrlib.php';
