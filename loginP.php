@@ -42,9 +42,8 @@
             <button id="btn__iniciar-sesion">Iniciar Sesión</button>
             </div>
             <div class="caja__trasera-register">
-                <h3>¿Aun no tienes una cuenta con nosotros?</h3>
-                <p>Registrate</p>
-            <button id="btn__registrarse">Registrate</button>
+                <h3>Nombre de Usuario: usuario1</h3>
+                <h3>Contraseña: 123456789</h3>
             </div>
         </div>
         <!--Formulario Login-->
