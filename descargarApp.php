@@ -34,10 +34,23 @@
               
                 <input type="button" class="btn__register-cover"value="DESCARGAR"></a>
 
-                <h1> En este apartado puedes ver las estadisticas del evento</h1>
-                <a href="https://app.powerbi.com/links/W7lr5NczNo?ctid=489581cf-0f55-408a-9e44-289b6fb55ea0&pbi_source=linkShare&bookmarkGuid=a04271b0-e217-47dc-886a-ad35a5cbc442" target="_blank">
-    <button type="button">Haz clic aquí</button>
-</a>
+  
+           
+            </div>
+
+            <div class="cover">
+        <div class="texto__informacion-cover">
+            <h1>Acceso de las estadisticas del Evento</h1>
+            
+            <div class="buttons__cover">
+              
+            <a href="https://app.powerbi.com/links/W7lr5NczNo?ctid=489581cf-0f55-408a-9e44-289b6fb55ea0&pbi_source=linkShare&bookmarkGuid=1af1b4c5-c7f5-48b6-bc78-fc1a75ef0fd6" target="_blank">
+    
+            <button type="button">Haz clic aquí</button>
+          
+           </a>
+
+  
            
             </div>
 
