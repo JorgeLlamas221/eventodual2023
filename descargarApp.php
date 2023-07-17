@@ -33,6 +33,11 @@
               <a href="Download/AsistenciaTeseDual2023.apk" download="AsistenciaTeseDual2023.apk">
               
                 <input type="button" class="btn__register-cover"value="DESCARGAR"></a>
+
+                <h1> En este apartado puedes ver las estadisticas del evento</h1>
+                <a href="https://app.powerbi.com/links/W7lr5NczNo?ctid=489581cf-0f55-408a-9e44-289b6fb55ea0&pbi_source=linkShare&bookmarkGuid=a04271b0-e217-47dc-886a-ad35a5cbc442" target="_blank">
+    <button type="button">Haz clic aquí</button>
+</a>
            
             </div>
 
