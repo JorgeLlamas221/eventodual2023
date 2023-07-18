@@ -44,7 +44,7 @@
             
             <div class="buttons__cover">
               
-            <a href="https://app.powerbi.com/links/tyxqo64dZc?ctid=489581cf-0f55-408a-9e44-289b6fb55ea0&pbi_source=linkShare" target="_blank">
+            <a href="https://app.powerbi.com/links/F51r4R7Eux?ctid=489581cf-0f55-408a-9e44-289b6fb55ea0&pbi_source=linkShare" target="_blank">
     
             <input type="button" class="btn__register-cover"value="Links">
           
