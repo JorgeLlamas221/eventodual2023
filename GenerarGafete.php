@@ -88,7 +88,7 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFillColor(42, 228, 149);
     $pdf->Ln();
     $pdf->Image('Imagenes/Logo_TECNM.png',11, 30, 20); //(x, y, tamaño)
-    $pdf->Ln();
+    //$pdf->Ln();
     $pdf->Image('Imagenes/Logo_tese.jpg',75, 30, 20);
 
     $pdf->SetTextColor(0, 0, 0);
