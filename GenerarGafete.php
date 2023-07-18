@@ -123,14 +123,14 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->cell(85, 20, $res2['tipoVisitante'], 1, 0, 'C', 1);
     $pdf->Ln();
 
-    $pdf->Ln(-90); //-40
+    $pdf->Ln(-95); //-40
     $pdf->SetFillColor(255, 255, 255);
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','',9);
-    $pdf->cell(95);
+    $pdf->cell(100);
     $pdf->cell(85, 12, $horario, 1, 0, 'L', 1);
     $pdf->Ln();
-    $pdf->cell(95);
+    $pdf->cell(100);
     $pdf->cell(85, 12, $ubicacion, 1, 0, 'L', 1);
 }
 $pdf->Output();
