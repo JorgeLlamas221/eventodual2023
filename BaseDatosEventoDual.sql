@@ -5,6 +5,7 @@ USE eventoDual_2023;
 CREATE TABLE inscripcion(
 id_inscripcion INT PRIMARY KEY AUTO_INCREMENT,
 tipoVisitante VARCHAR(30) NOT NULL,
+nombreEmpresa VARCHAR(40) NOT NULL,
 nombres VARCHAR(30) NOT NULL,
 apellidoPaterno VARCHAR (30) NOT NULL,
 apellidoMaterno VARCHAR (30) NOT NULL,
