@@ -74,10 +74,12 @@ while($res1 = mysqli_fetch_array($select1)){
         APELLIDO PATERNO: '.$apellidoP. '
         APELLIDO MATERNO: '.$apellidoM. '
         SEXO: '.$sexo.' 
-        VISITANTE: '. $tipoVisitante;
-        QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);*/
+        VISITANTE: '. $tipoVisitante;*/
 
 $informacion = '"'.$nombre.' '.$apellidoP.' '.$apellidoM.'"';
+QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);
+
+
 
 $conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
