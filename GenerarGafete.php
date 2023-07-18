@@ -22,7 +22,7 @@ function Header()
     // Título
     $this->Cell(30,10,'Evento Dual 2023', 0, 0, 'L');
     // Salto de línea
-    $this->Cell(20);
+    $this->Ln(20);
     $this->Image('Imagenes/Logo_tese.jpg',180, 30, 20);
 
     //$this->Image('Imagenes/Logo_TECHNM.png',30,8,33);
