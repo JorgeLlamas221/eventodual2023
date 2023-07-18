@@ -13,9 +13,11 @@ function Header()
 {
     // Logo
     $this->Image('Imagenes/Logo_tese.jpg',165,8,33);
-    $this->Image('Imagenes/EdoMex.png',11,8,40);
+    //$this->Image('Imagenes/EdoMex.png',11,8,40);
+    $this->Image('Imagenes/EdoMex.png',11,8,10);
     // Arial bold 15
-    $this->SetFont('Times','B',25);
+    //$this->SetFont('Times','B',25);
+    $this->SetFont('Times','B',11);
     // Movernos a la derecha
     $this->Cell(80);
     // Título
