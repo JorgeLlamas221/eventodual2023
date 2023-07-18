@@ -37,8 +37,8 @@
         <!--Formulario completo-->
         <div class="caja__trasera">
             <div class="caja__trasera-login">
-                <!--<h3>¿Ya tienes una cuenta con nosotros?</h3>-->
-                <!--<p>Inicia sesión para acceder a nuestros beneficios</p>-->
+                <h3></h3>
+                <p></p>
             <button id="btn__iniciar-sesion">Iniciar Sesión</button>
             </div>
             <div class="caja__trasera-register">
