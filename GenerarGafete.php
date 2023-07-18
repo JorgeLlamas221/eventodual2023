@@ -84,6 +84,11 @@ $select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombreEmpresa, nombre
 
 $horario = 'Horario: Miercoles 14 De Junio 2023';
 $ubicacion = 'Edificio: Auditorio';
+$evento1 = '07:00 A.M - Bienvenida';
+$evento2 = '07:15 A.M - Presentacion';
+$evento3 = '07:30 A.M - Palabras De Direccion';
+$evento4 = '08:30 A.M - Palabras Hacia Los Alumnos Dual';
+$evento5 = '09:00 A.M - Fin De Evento';
 
 $pdf->SetTextColor(0, 0, 0); 
 $pdf->SetFillColor(42, 228, 149); 
@@ -127,11 +132,34 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFillColor(255, 255, 255);
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','',12);
+
     $pdf->cell(110);
-    $pdf->cell(85, 12, $horario, 0, 0, 'L', 1);
+    $pdf->cell(85, 12, $horario, 1, 0, 'L', 1);
     $pdf->Ln();
+
     $pdf->cell(110);
-    $pdf->cell(85, 12, $ubicacion, 0, 0, 'L', 1);
+    $pdf->cell(85, 12, $ubicacion, 1, 0, 'L', 1);
+    $pdf->Ln();
+
+    $pdf->cell(110);
+    $pdf->cell(85, 12, $evento1, 1, 0, 'L', 1);
+    $pdf->Ln();
+
+    $pdf->cell(110);
+    $pdf->cell(85, 12, $evento2, 1, 0, 'L', 1);
+    $pdf->Ln();
+
+    $pdf->cell(110);
+    $pdf->cell(85, 12, $evento3, 1, 0, 'L', 1);
+    $pdf->Ln();
+
+    $pdf->cell(110);
+    $pdf->cell(85, 12, $evento4, 1, 0, 'L', 1);
+    $pdf->Ln();
+
+    $pdf->cell(110);
+    $pdf->cell(85, 12, $evento5, 1, 0, 'L', 1);
+    $pdf->Ln();
 }
 $pdf->Output();
 ?>

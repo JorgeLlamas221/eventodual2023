@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css" type="text/css"/>
-        <title>Evento Dual 2023 - </title>
+        <title>Evento Dual 2023 - TESE</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -11,7 +11,7 @@
         <h2>Introduzca Los Siguientes Datos:</h2>
         <form action="AlmacenarInformacion.php" method="POST">
                 <b>Tipo De Portador:<b> <br>
-                        <br><select name="tipoVisitante"><br>
+                        <br><select name="tipoVisitante" required=""><br>
                                 <option value="Dual Activo">Dual Activo</option>
                                 <option value="Empresa">Empresa</option>
                                 <option value="Dual Egresado">Dual Egresado</option>
@@ -19,22 +19,22 @@
                         </select>        
                 <br><br>
                 <b>Nombre(s):<b> <br><br>
-                <input type="text" name="nombres" value=''><br><br>
+                <input type="text" name="nombres" value='' required="" pattern="[a-zA-Z]+"><br><br>
                 <b>Apellido Paterno:<b> <br><br>
-                <input type="text" name="aPaterno" value=''><br><br>
+                <input type="text" name="aPaterno" value='' required="" pattern="[a-zA-Z]+"><br><br>
                 <b>Apellido Materno:<b> <br><br>
-                <input type="text" name="aMaterno" value=''><br><br>
+                <input type="text" name="aMaterno" value='' required="" pattern="[a-zA-Z]+"><br><br>
 
                 <b>Nombre De La Empresa: <b> <br><br>
-                <input type="text" name="nomEmpresa" value=''><br><br>
+                <input type="text" name="nomEmpresa" value='' required="" pattern="[a-zA-Z]+"><br><br>
                 <b>Nota: En caso de ser visitante escribir TESE, o en caso de ser empresa escribir el nombre de la empresa</b><br><br>
                 
                 <b>Sexo:<b> <br><br>
-                        <input type="radio" name="sexo" value="hombre">Hombre
-                        <input type="radio" name="sexo" value="mujer">Mujer<br><br>
-                
+                        <input type="radio" name="sexo" value="hombre" required="">Hombre
+                        <input type="radio" name="sexo" value="mujer" required="">Mujer<br><br>
+                        <!-- REQUERIED Hace que se deba llenar el campo forzosamente, PATTERN Valida los tipos de entrada-->
                 <b>Correo Electronico:<b> <br><br>
-                        <input type="text" name="correoElectronico" value='' placeholder="Ejemplo@xxxxxx.tese.edu.com"><br><br>
+                        <input type="email" name="correoElectronico" value='' placeholder="xxxxxx@tese.edu.com" required=""><br><br>
                 <br>
                         <input type="submit" name="boton1" value="Registrarme">
                 <br><br>
