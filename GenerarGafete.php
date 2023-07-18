@@ -79,14 +79,14 @@ while($res1 = mysqli_fetch_array($select1)){
 $informacion = '"'.$nombre.' '.$apellidoP.' '.$apellidoM.'"';
 QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);
 
-
-
 $conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
 
-$pdf->SetTextColor(0, 0, 0); // Color Texto
-$pdf->SetFillColor(42, 228, 149); // Color Celda
-$pdf->SetFont('Arial','',15); // Tipo Letra
+$horario = 'Horario: Miercoles 14 De Junio 2023 Edificio: Auditorio';
+
+$pdf->SetTextColor(0, 0, 0); 
+$pdf->SetFillColor(42, 228, 149); 
+$pdf->SetFont('Arial','',15); 
 $pdf->cell(85, 25, "Evento Dual 2023", 1, 0, 'C', 1);
 $pdf->Ln();
 while($res2 = mysqli_fetch_array($select2)){
@@ -120,6 +120,12 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFont('Arial','B',25);
     
     $pdf->cell(85, 20, $res2['tipoVisitante'], 1, 0, 'C', 1);
+
+    $pdf->SetFillColor(255, 255, 255);
+    $pdf->SetTextColor(0, 0, 0);
+    $pdf->SetFont('Arial','',15);
+
+    $pdf->cell(185, 35, $horario, 1, 0, 'C', 1);
 }
 $pdf->Output();
 ?>
