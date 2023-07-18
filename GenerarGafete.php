@@ -82,7 +82,8 @@ QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);
 $conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
 
-$horario = 'Horario: Miercoles 14 De Junio 2023 Edificio: Auditorio';
+$horario = 'Horario: Miercoles 14 De Junio 2023';
+$ubicacion = 'Edificio: Auditorio';
 
 $pdf->SetTextColor(0, 0, 0); 
 $pdf->SetFillColor(42, 228, 149); 
@@ -123,9 +124,10 @@ while($res2 = mysqli_fetch_array($select2)){
 
     $pdf->SetFillColor(255, 255, 255);
     $pdf->SetTextColor(0, 0, 0);
-    $pdf->SetFont('Arial','',15);
+    $pdf->SetFont('Arial','',9);
 
-    $pdf->cell(185, 35, $horario, 1, 0, 'C', 1);
+    $pdf->cell(195, 35, $horario, 1, 0, 'L', 1);
+    $pdf->cell(195, 40, $ubicacion, 1, 0, 'L', 1);
 }
 $pdf->Output();
 ?>
