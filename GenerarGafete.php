@@ -92,6 +92,7 @@ while($res2 = mysqli_fetch_array($select2)){
     //$pdf->Ln();
     $pdf->Image('Imagenes/Logo_tese.jpg',75, 30, 20);
 
+    $pdf->SetFillColor(255, 255, 255);
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','B',13);
     $pdf->cell(85, 25, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
@@ -99,7 +100,7 @@ while($res2 = mysqli_fetch_array($select2)){
     
     $pdf->SetFont('Arial','B',13);
     $pdf->SetTextColor(255, 255, 255);
-    $pdf->SetFillColor(5, 12, 95);
+    $pdf->SetFillColor(0,0,0); //5,12,95
     $pdf->cell(85, 15, $res2['nombreEmpresa'], 1, 0, 'C');
 
     $pdf->SetFillColor(42, 228, 149);
