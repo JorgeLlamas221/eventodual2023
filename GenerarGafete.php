@@ -96,11 +96,13 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFont('Arial','B',13);
     $pdf->cell(85, 25, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
     $pdf->Ln(); //
+    $pdf->SetTextColor(255, 255, 255);
+    $pdf->SetFillColor(5, 12, 95);
     $pdf->cell(85, 15, $res2['nombreEmpresa'], 1, 0, 'C');
     $pdf->Ln();
     $pdf->SetFont('Arial','',13);
     $pdf->cell(85, 30, "Junio 2023", 1, 0, 'R', 1);
-    $pdf->Image('Codigo_QR/QR.png',21, 85, 30); // 11, 85, 30
+    $pdf->Image('Codigo_QR/QR.png',11, 95, 30); // 11, 85, 30
     $pdf->Ln();
 
     $pdf->SetFillColor(175, 34, 34);
