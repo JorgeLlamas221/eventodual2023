@@ -46,7 +46,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 
 $conector1 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
-$select1 = mysqli_query($conector1, "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo  FROM inscripcion WHERE id_inscripcion = $info");
+$select1 = mysqli_query($conector1, "SELECT tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo  FROM inscripcion WHERE id_inscripcion = $info");
 
 require 'phpqrcode/qrlib.php';
 $directorio = 'Codigo_QR/';
@@ -62,7 +62,7 @@ $dimension = 3;
 
 while($res1 = mysqli_fetch_array($select1)){
         $tipoVisitante = $res1["tipoVisitante"];
-        $nomEmpresa = $res1["nomEmpresa"];
+        $nomEmpresa = $res1["nombreEmpresa"];
         $nombre = $res1["nombres"];
         $apellidoP = $res1["apellidoPaterno"];
         $apellidoM = $res1["apellidoMaterno"];
