@@ -19,14 +19,12 @@ function Header()
     $this->SetFont('Times','B',11);
     // Movernos a la derecha
     //$this->Cell(80);
-    $this->Cell(20);
+    $this->Cell(23);
     // Título
     $this->Cell(30,10,'Evento Dual 2023', 0, 0, 'L');
     // Salto de línea
-    //$this->Ln(20);
-    $this->Cell(20);
     $this->Ln(45);
-    $this->Ln(45);
+    //$this->Cell(20);
     $this->Image('Imagenes/Logo_tese.jpg',165,8,20);
 
     //$this->Image('Imagenes/Logo_TECHNM.png',30,8,33);
