@@ -127,8 +127,9 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','',9);
 
-    $pdf->cell(100, 30, $horario, 1, 0, 'L', 1);
-    $pdf->cell(100, 30, $ubicacion, 1, 0, 'L', 1);
+    $pdf->cell(75, 12, $horario, 1, 0, 'L', 1);
+    $pdf->Ln();
+    $pdf->cell(75, 12, $ubicacion, 1, 0, 'L', 1);
 }
 $pdf->Output();
 ?>
