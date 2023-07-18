@@ -25,7 +25,7 @@ function Header()
     // Salto de línea
     $this->Ln(45);
     //$this->Cell(20);
-    $this->Image('Imagenes/Logo_tese.jpg',130, 30, 20);
+    $this->Image('Imagenes/Logo_tese.jpg',180, 30, 20);
 
     //$this->Image('Imagenes/Logo_TECHNM.png',30,8,33);
 }
