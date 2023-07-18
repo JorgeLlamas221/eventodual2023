@@ -95,7 +95,8 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','B',13);
     $pdf->cell(85, 30, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
-    $pdf->cell(95, 30, $res2['nomEmpresa'], 1, 0, 'C');
+    $pdf->Ln(); //
+    $pdf->cell(85, 30, $res2['nomEmpresa'], 1, 0, 'C');
     $pdf->Ln();
     $pdf->SetFont('Arial','',13);
     $pdf->cell(85, 30, "Junio 2023", 1, 0, 'R', 1);
