@@ -69,13 +69,15 @@ while($res1 = mysqli_fetch_array($select1)){
         $sexo = $res1["sexo"];
 }
 
-$informacion = 'FOLIO: '.$info.'
+/*$informacion = 'FOLIO: '.$info.'
         NOMBRE(S): '.$nombre .'
         APELLIDO PATERNO: '.$apellidoP. '
         APELLIDO MATERNO: '.$apellidoM. '
         SEXO: '.$sexo.' 
         VISITANTE: '. $tipoVisitante;
-        QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);
+        QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);*/
+
+$informacion = '"'.$nombre.' '.$apellidoP.' '.$apellidoM.'"';
 
 $conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
@@ -96,7 +98,7 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','B',13);
     $pdf->cell(85, 25, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
-    $pdf->Ln(); //
+    $pdf->Ln(); 
     
     $pdf->SetFillColor(5, 12, 85); 
     $pdf->SetFont('Arial','B',13);
