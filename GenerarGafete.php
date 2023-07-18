@@ -134,31 +134,31 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFont('Arial','',12);
 
     $pdf->cell(110);
-    $pdf->cell(85, 15, $horario, 1, 0, 'L', 1);
+    $pdf->cell(82, 15, $horario, 1, 0, 'L', 1);
     $pdf->Ln();
 
     $pdf->cell(110);
-    $pdf->cell(85, 15, $ubicacion, 1, 0, 'L', 1);
+    $pdf->cell(82, 15, $ubicacion, 1, 0, 'L', 1);
     $pdf->Ln();
 
     $pdf->cell(110);
-    $pdf->cell(85, 15, $evento1, 1, 0, 'L', 1);
+    $pdf->cell(82, 15, $evento1, 1, 0, 'L', 1);
     $pdf->Ln();
 
     $pdf->cell(110);
-    $pdf->cell(85, 15, $evento2, 1, 0, 'L', 1);
+    $pdf->cell(82, 15, $evento2, 1, 0, 'L', 1);
     $pdf->Ln();
 
     $pdf->cell(110);
-    $pdf->cell(85, 15, $evento3, 1, 0, 'L', 1);
+    $pdf->cell(82, 15, $evento3, 1, 0, 'L', 1);
     $pdf->Ln();
 
     $pdf->cell(110);
-    $pdf->cell(85, 15, $evento4, 1, 0, 'L', 1);
+    $pdf->cell(82, 15, $evento4, 1, 0, 'L', 1);
     $pdf->Ln();
 
     $pdf->cell(110);
-    $pdf->cell(85, 15, $evento5, 1, 0, 'L', 1);
+    $pdf->cell(82, 15, $evento5, 1, 0, 'L', 1);
     $pdf->Ln();
 }
 $pdf->Output();
