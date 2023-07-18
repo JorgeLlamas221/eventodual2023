@@ -86,7 +86,7 @@ $pdf->cell(85, 25, "Evento Dual 2023", 1, 0, 'C', 1);
 $pdf->Ln();
 while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFillColor(42, 228, 149);
-    $pdf->Ln();
+    //$pdf->Ln();
     $pdf->Image('Imagenes/Logo_TECNM.png',11, 30, 20); //(x, y, tamaño)
     //$pdf->Ln();
     $pdf->Image('Imagenes/Logo_tese.jpg',75, 30, 20);
