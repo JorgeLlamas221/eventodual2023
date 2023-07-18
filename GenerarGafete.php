@@ -133,32 +133,32 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','',12);
 
-    $pdf->cell(110);
-    $pdf->cell(82, 15, $horario, 1, 0, 'L', 1);
+    $pdf->cell(105);
+    $pdf->cell(89, 12, $horario, 1, 0, 'L', 1);
     $pdf->Ln();
 
-    $pdf->cell(110);
-    $pdf->cell(82, 15, $ubicacion, 1, 0, 'L', 1);
+    $pdf->cell(105);
+    $pdf->cell(89, 12, $ubicacion, 1, 0, 'L', 1);
     $pdf->Ln();
 
-    $pdf->cell(110);
-    $pdf->cell(82, 15, $evento1, 1, 0, 'L', 1);
+    $pdf->cell(105);
+    $pdf->cell(89, 12, $evento1, 1, 0, 'L', 1);
     $pdf->Ln();
 
-    $pdf->cell(110);
-    $pdf->cell(82, 15, $evento2, 1, 0, 'L', 1);
+    $pdf->cell(105);
+    $pdf->cell(89, 12, $evento2, 1, 0, 'L', 1);
     $pdf->Ln();
 
-    $pdf->cell(110);
-    $pdf->cell(82, 15, $evento3, 1, 0, 'L', 1);
+    $pdf->cell(105);
+    $pdf->cell(89, 12, $evento3, 1, 0, 'L', 1);
     $pdf->Ln();
 
-    $pdf->cell(110);
-    $pdf->cell(82, 15, $evento4, 1, 0, 'L', 1);
+    $pdf->cell(105);
+    $pdf->cell(89, 12, $evento4, 1, 0, 'L', 1);
     $pdf->Ln();
 
-    $pdf->cell(110);
-    $pdf->cell(82, 15, $evento5, 1, 0, 'L', 1);
+    $pdf->cell(105);
+    $pdf->cell(89, 12, $evento5, 1, 0, 'L', 1);
     $pdf->Ln();
 }
 $pdf->Output();
