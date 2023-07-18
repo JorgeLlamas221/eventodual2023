@@ -123,7 +123,7 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->cell(85, 20, $res2['tipoVisitante'], 1, 0, 'C', 1);
     $pdf->Ln();
 
-    $pdf->Ln(-25); //-40
+    $pdf->Ln(-80); //-40
     $pdf->SetFillColor(255, 255, 255);
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','',9);
