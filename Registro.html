@@ -3,11 +3,18 @@
     <head>
         <link rel="stylesheet" href="style.css" type="text/css"/>
         <title>Evento Dual 2023 - TESE</title>
+        <link rel="stylesheet" href="css/Registro.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body bgcolor="#f0f0f0">
-        <center><h1>Evento Dual 2023</h1><center>
+    <body background="white">
+        <div class="cover">
+                <div class="logotese">
+                        <img src="media/logo.png"  alt="">
+                    <br>
+                        <img src="media/Dual.jpeg" width="300px" alt="" id="dual" >
+                    </div>
+        <h1>Evento Dual 2023</h1>
         <h2>Introduzca Los Siguientes Datos:</h2>
         <form action="AlmacenarInformacion.php" method="POST">
                 <b>Tipo De Portador:<b> <br>
@@ -19,7 +26,7 @@
                         </select>        
                 <br><br>
                 <b>Nombre(s):<b> <br><br>
-                <input type="text" name="nombres" value='' required="" pattern="[a-zA-Z]+"><br><br>
+                <input type="text" name="nombres" value='' required="" pattern="^[a-zA-Z ]+$"><br><br>
                 <b>Apellido Paterno:<b> <br><br>
                 <input type="text" name="aPaterno" value='' required="" pattern="[a-zA-Z]+"><br><br>
                 <b>Apellido Materno:<b> <br><br>
@@ -27,7 +34,7 @@
 
                 <b>Nombre De La Empresa: <b> <br><br>
                 <input type="text" name="nomEmpresa" value='' required="" pattern="[a-zA-Z]+"><br><br>
-                <b>Nota: En caso de ser visitante escribir TESE, o en caso de ser empresa escribir el nombre de la empresa</b><br><br>
+                <b>Nota: En caso de ser visitante escribir TESE,<br> o en caso de ser empresa escribir el nombre de la empresa</b><br><br>
                 
                 <b>Sexo:<b> <br><br>
                         <input type="radio" name="sexo" value="hombre" required="">Hombre
@@ -39,6 +46,7 @@
                         <input type="submit" name="boton1" value="Registrarme">
                 <br><br>
     </form>
+</div>
     </select>
             </select>
         <br><br>
