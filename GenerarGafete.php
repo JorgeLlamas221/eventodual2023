@@ -80,9 +80,9 @@ $informacion = 'FOLIO: '.$info.'
 $conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
 $select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
 
-$pdf->SetTextColor(0, 0, 0);
-$pdf->SetFillColor(42, 228, 149);
-$pdf->SetFont('Arial','',15);
+$pdf->SetTextColor(0, 0, 0); // Color Texto
+$pdf->SetFillColor(42, 228, 149); // Color Celda
+$pdf->SetFont('Arial','',15); // Tipo Letra
 $pdf->cell(85, 25, "Evento Dual 2023", 1, 0, 'C', 1);
 $pdf->Ln();
 while($res2 = mysqli_fetch_array($select2)){
@@ -97,9 +97,9 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->cell(85, 25, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
     $pdf->Ln(); //
     
-    $pdf->SetFillColor(5, 12, 95);
     $pdf->SetFont('Arial','B',13);
     $pdf->SetTextColor(255, 255, 255);
+    $pdf->SetFillColor(5, 12, 95);
     $pdf->cell(85, 15, $res2['nombreEmpresa'], 1, 0, 'C');
 
     $pdf->SetFillColor(42, 228, 149);
