@@ -20,7 +20,7 @@ function Header()
     // Movernos a la derecha
     $this->Cell(30); // 80
     // Título
-    $this->Cell(30,10,'Evento Dual 2023', 1, 0, 'L');
+    $this->Cell(30,10,'Evento Dual 2023', 0, 0, 'L');
     // Salto de línea
     $this->Ln(20);
     $this->Image('Imagenes/Logo_tese.jpg',180, 30, 20);
@@ -62,6 +62,7 @@ $dimension = 3;
 
 while($res1 = mysqli_fetch_array($select1)){
         $tipoVisitante = $res1["tipoVisitante"];
+        $nomEmpresa = $res1["nomEmpresa"];
         $nombre = $res1["nombres"];
         $apellidoP = $res1["apellidoPaterno"];
         $apellidoM = $res1["apellidoMaterno"];
@@ -77,7 +78,7 @@ $informacion = 'FOLIO: '.$info.'
         QRcode::png($informacion, $archivo, $nivel, $tamanio, $dimension);
 
 $conector2 = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die ("Error De Conexion!!!" );
-$select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
+$select2 = mysqli_query($conector2, "SELECT tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo  from inscripcion where id_inscripcion = $info");
 
 $pdf->SetTextColor(0, 0, 0);
 $pdf->SetFillColor(42, 228, 149);
@@ -94,6 +95,7 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFont('Arial','B',13);
     $pdf->cell(85, 30, $res2['nombres']." ".$res2['apellidoPaterno']." ".$res2['apellidoMaterno'], 1, 0, 'C');
+    $pdf->cell(95, 30, $res2['nomEmpresa'], 1, 0, 'C');
     $pdf->Ln();
     $pdf->SetFont('Arial','',13);
     $pdf->cell(85, 30, "Junio 2023", 1, 0, 'R', 1);

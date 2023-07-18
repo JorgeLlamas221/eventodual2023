@@ -5,7 +5,7 @@ $pwd = 'C45B8640EFBK5C2A$';
 $nombreBD = 'eventoDual_2023';
 
 $conexionBD = mysqli_connect($nombreHost, $nombreUsuario, $pwd, $nombreBD) or die("ERROR!!!! No Se Pudo Conectar Al Servidor :(");
-$guardarRegistro = "INSERT INTO inscripcion (tipoVisitante, nombres, apellidoPaterno, apellidoMaterno, sexo, correoElectronico) VALUES ('".$_POST["tipoVisitante"]."','".$_POST["nombres"]."','".$_POST["aPaterno"]."','".$_POST["aMaterno"]."','".$_POST["sexo"]."','".$_POST["correoElectronico"]."')";
+$guardarRegistro = "INSERT INTO inscripcion (tipoVisitante, nombreEmpresa, nombres, apellidoPaterno, apellidoMaterno, sexo, correoElectronico) VALUES ('".$_POST["tipoVisitante"]."','".$_POST["nomEmpresa"]."','".$_POST["nombres"]."','".$_POST["aPaterno"]."','".$_POST["aMaterno"]."','".$_POST["sexo"]."','".$_POST["correoElectronico"]."')";
 $tmp = mysqli_query($conexionBD, $guardarRegistro) or die ("ERROR !!! No Se Pudo Tener Conexion Con La BD :(");
 $asignarID = "SELECT id_inscripcion FROM inscripcion WHERE nombres= '".$_POST["nombres"]."' AND apellidoPaterno= '".$_POST["aPaterno"]."' AND apellidoMaterno= '".$_POST["aMaterno"]."'";
 
@@ -16,6 +16,7 @@ if ($stmt = $conexionBD->prepare($asignarID)) {
         echo "<b><h1>Ingresaste Los Siguientes Datos:</h1></b>";
         echo "<b><br>Su Folio De Inscripcion Asignado Por El Sistema Es:</br></b>".$id_inscripcion;
         echo "<br><b>Tipo De Visitante:</b><br>".$_POST["tipoVisitante"];
+        echo "<br><b>Nombre De Empresa o Institucion:</b><br>".$_POST["nomEmpresa"];
         echo "<br><b>Nombre:</b><br>".$_POST["nombres"];
         echo "<br><b>Apellido Paterno:</b><br>".$_POST["aPaterno"];
         echo "<br><b>Apellido Materno:</b><br>".$_POST["aMaterno"];
