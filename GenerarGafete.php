@@ -99,7 +99,7 @@ while($res2 = mysqli_fetch_array($select2)){
     $pdf->Ln(); //
     
     $pdf->SetFont('Arial','B',13);
-    $pdf->SetTextColor(255, 255, 255);
+    $pdf->SetTextColor(0, 0, 0);
     $pdf->SetFillColor(0,0,0); //5,12,95
     $pdf->cell(85, 15, $res2['nombreEmpresa'], 1, 0, 'C');
 
