@@ -12,7 +12,7 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Ln(15);
+    $this->Ln(30);
     $this->Image('Imagenes/Logo_tese.jpg',165,8,20);
     //$this->Image('Imagenes/EdoMex.png',11,8,40);
     $this->Image('Imagenes/EdoMex.png',11,8,20);
@@ -22,7 +22,7 @@ function Header()
     // Movernos a la derecha
     $this->Cell(80);
     // Título
-    $this->Cell(30,10,'Evento Dual 2023', 0, 0, 'L');
+    $this->Cell(30,10,'Evento Dual 2023', 0, 0, 'I');
     // Salto de línea
     $this->Ln(20);
     //$this->Image('Imagenes/Logo_TECHNM.png',30,8,33);
@@ -86,7 +86,9 @@ $pdf->cell(85, 25, "Evento Dual 2023", 1, 0, 'C', 1);
 $pdf->Ln();
 while($res2 = mysqli_fetch_array($select2)){
     $pdf->SetFillColor(42, 228, 149);
+    $pdf->Ln();
     $pdf->Image('Imagenes/Logo_TECNM.png',11, 30, 20); //(x, y, tamaño)
+    $pdf->Ln();
     $pdf->Image('Imagenes/Logo_tese.jpg',75, 30, 20);
 
     $pdf->SetTextColor(0, 0, 0);
