@@ -19,8 +19,8 @@
 
     <div class="menu">
        <nav><ul>
-        <li><a href="index.html">Inicio</a><</li>
-        <li><a href="login.html">login Administrativos</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <!--<li><a href="login.html">login Administrativos</a></li>-->
         
        </ul></nav> 
     </div>
@@ -37,8 +37,8 @@
         <!--Formulario completo-->
         <div class="caja__trasera">
             <div class="caja__trasera-login">
-                <h3>¿Ya tienes una cuenta con nosotros?</h3>
-                <p>Inicia sesión para acceder a nuestros beneficios</p>
+                <!--<h3>¿Ya tienes una cuenta con nosotros?</h3>-->
+                <!--<p>Inicia sesión para acceder a nuestros beneficios</p>-->
             <button id="btn__iniciar-sesion">Iniciar Sesión</button>
             </div>
             <div class="caja__trasera-register">

@@ -39,7 +39,7 @@ mysqli_close($conexionBD);
             <b>Para Finalizar Tu Registro, Introduzca El Numero De Folio Que Se Le Fue Asignado Por El Sistema y De Click En El Boton "Finalizar Registro" y Obtendras Tu Pase Al Evento Dual 2023 Por Correo.<br><input type="number" name="id_trabajador" value="" placeholder="Folio"></br></b>         
             <br><input type="submit" name="boton_pdf" value="Finalizar Registro"></br>
          </form>
-         <META HTTP-EQUIV="REFRESH" CONTENT="30;URL=index.html">
+         <META HTTP-EQUIV="REFRESH" CONTENT="60;URL=index.html">
     </body>
     </html>
        
